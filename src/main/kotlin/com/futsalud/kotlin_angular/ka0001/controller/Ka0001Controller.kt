@@ -29,21 +29,21 @@ class Ka0001Controller {
         user1.userId = 1000001
         user1.accountId = "direct.k"
         user1.userNm = "ダイレクト　会長"
-        user1.email = "direct.k@l-ain.com"
+        user1.email = "direct.k@futsalud.com"
         userList.add(user1)
 
         val user2 = Ka0001Dto()
         user2.userId = 1000002
         user2.accountId = "direct.p"
         user2.userNm = "ダイレクト　社長"
-        user2.email = "direct.p@l-ain.com"
+        user2.email = "direct.p@futsalud.com"
         userList.add(user2)
 
         val user3 = Ka0001Dto()
         user3.userId = 1000003
         user3.accountId = "direct.s"
         user3.userNm = "ダイレクト　センム"
-        user3.email = "direct.s@l-ain.com"
+        user3.email = "direct.s@futsalud.com"
         userList.add(user3)
 
         log.debug("END")
