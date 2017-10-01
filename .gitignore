@@ -1,0 +1,6 @@
+/bin/
+/build/
+/file/dbms/
+/.idea/
+/.gradle/
+kotlin-angular.iml

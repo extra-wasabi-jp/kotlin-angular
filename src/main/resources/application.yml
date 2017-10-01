@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name:  org.hsqldb.jdbcDriver
+    url:                jdbc:hsqldb:file:./file/dbms/KADB;shutdown=true;
+    username:           SA
+  thymeleaf:
+    cache:              false
+    suffix:             .html
+    encoding:           UTF-8
+    context-type:       text/html
+
+flyway:
+  enabled:              false
+
+doma:
+  dialect:              hsql
+

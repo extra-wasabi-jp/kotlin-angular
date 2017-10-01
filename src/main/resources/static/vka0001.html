@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="kaApps">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/css; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <title>Title</title>
+</head>
+<script type="text/javascript">
+    angular.module('kaApps', [])
+      .controller("UserController", function($scope, $http) {
+
+      $http({
+        method: "GET"
+        , url: "http://localhost:8080/ka0001/userlist"
+      }).then(
+        function onSuccess(response) {
+          $scope.result = "success";
+          $scope.userlist = response.data;
+          console.log(response.data);
+        },
+        function onError(response) {
+          alert("failuar");
+          $scope.result = "error";
+        }
+      );
+
+    });
+</script>
+
+<body ng-controller="UserController">
+<nav class="navbar navbar-expand-sm navbar-fixed-top navbar-dark bg-dark fg-white">
+    <a class="navbar-brand" href="/">Kotlin on Spring-Boot + Angular.js</a>
+</nav>
+
+<div class="container">
+
+    result = {{result}}
+
+    <div class="row">
+        <div class="col">ユーザーID</div>
+        <div class="col">アカウントID</div>
+        <div class="col">ユーザー名</div>
+        <div class="col">E-Mail</div>
+    </div>
+    <div class="row" ng-repeat="user in userlist">
+        <div class="col">{{user.userId}}</div>
+        <div class="col">{{user.accountId}}</div>
+        <div class="col">{{user.userNm}}</div>
+        <div class="col">{{user.email}}</div>
+    </div>
+
+</div>
+</body>
+</html>
